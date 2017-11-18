@@ -3,7 +3,6 @@ import { connect } from 'react-redux';
 
 class ChangeColor extends Component {
   render(){
-    const color = this.props.myHighLight ? 'blue' : 'black';
     return (
       <button onClick={ () => this.props.dispatch({ type: 'CHANGE_COLOR' }) }>Change Color</button>
     )

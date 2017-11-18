@@ -6,10 +6,11 @@ import Controller from '../reducers/updown_points';
 class AppCount extends Component{
 
 	render(){
-    const color = this.props.myHighLight ? 'blue' : 'black';
+	const color = this.props.myHighLight ? 'blue' : 'black';
+	const size = this.props.mySize ? '18px': '30px';
 		return(
 			<div>
-			<h1 style={{color}}>{this.props.myValue}</h1>
+			<h1 style={{color: color, fontSize: size}}>{this.props.myValue}</h1>
 			<Controller />
 			</div>
 		);
@@ -17,10 +18,10 @@ class AppCount extends Component{
 }
 
 function mapStateToProps(state) {
-	console.log(state);
 	return {
       myValue: state.value,
-      myHighLight: state.highlight
+	  myHighLight: state.highlight,
+	  mySize: state.size
     };
 }
 export default connect(mapStateToProps)(AppCount);
